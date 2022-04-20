@@ -1,0 +1,22 @@
+/* 控制login显示 */
+form {
+    padding: 0rem 5rem;
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+}
+
+form.sign-in-form {
+    z-index: 2;
+}
+
+.submit-btn {
+    width: 100%;
+}
+
+.loginForm {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px 40px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px #cccc;
+}
