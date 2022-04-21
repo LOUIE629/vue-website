@@ -32,6 +32,9 @@
 
 <script lang="ts">
 import { getCurrentInstance } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
+
 export default {
   props: {
     loginUser: {
@@ -44,20 +47,29 @@ export default {
     },
   },
   setup() {
-
     //@ts-ignore
     const { ctx } = getCurrentInstance();
-
+    const router = useRouter();
     //触发登录
     const handleLogin = (formName: string) => {
-      ctx.$refs[formName].validate((valid: boolean) => {
-        if (valid) {
-          console.log("submit!");
-        } else {
-          console.log("error submit!");
-          return false;
-        }
-      });
+      // ctx.$refs[formName].validate((valid: boolean) => {
+      //   if (valid) {
+      //     alert("submit!");
+      //   } else {
+      //     console.log("error submit!");
+      //     return false;
+      //   }
+      // });
+      axios
+        .post("http://localhost:3000/user/login", {
+          account: ctx.loginUser.account,
+          password: ctx.loginUser.password,
+        })
+        .then((res: any) => {
+          //注册成功
+          alert("登录成功!");
+          router.push("/");
+        });
     };
 
     return { handleLogin };
