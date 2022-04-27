@@ -78,5 +78,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/LoginForm.css";
+@import "../assets/css/LoginForm.css";
 </style>

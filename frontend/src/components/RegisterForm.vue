@@ -56,25 +56,9 @@ export default {
     //@ts-ignore
     const { ctx } = getCurrentInstance();
     const router = useRouter();
-
-    //  const data={"account":"abcd","password":"123","confirmpassword":"123"};
-    // const Account:string =  ctx.registerUser.account;
-    // const Password = ctx.registerUser.password.toString();
-    // const data = { account: Account, password: Password };
     //触发登录
     const handleRegister = (formName: string) => {
-      // ctx.$refs[formName].validate((valid: boolean) => {
-      //   if (valid) {
-      //     axios.post("http://localhost:3000/user/register",{account:ctx.registerUser.account,password:ctx.registerUser.password}).then((res: any) => {
-      //       //注册成功
-      //       alert("submit!");
-      //       //路由跳转
-      //       router.push("/");
-      //     })
-      //   } else {
-      //     console.log("error submit!");
-      //     return false;
-      //   }
+
       axios
         .post("http://localhost:3000/user/register", {
           account: ctx.registerUser.account,
@@ -93,5 +77,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/RegisterForm.css";
+@import "../assets/css/RegisterForm.css";
 </style>

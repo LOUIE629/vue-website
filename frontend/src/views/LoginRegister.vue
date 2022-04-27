@@ -19,7 +19,7 @@
             注册
           </button>
         </div>
-        <img src="../assets/hong.jpg" class="image" alt="" />
+        <img src="" class="image" alt="" />
       </div>
 
       <div class="panel right-panel">
@@ -29,7 +29,7 @@
             登录
           </button>
         </div>
-        <img src="../assets/huang.jpg" class="image" alt="" />
+        <img src="" class="image" alt="" />
       </div>
     </div>
     
@@ -55,6 +55,6 @@ export default {
 
 
 <style scoped>
-@import "../assets/LoginRegisterAnime.css";
+@import "../assets/css/LoginRegisterAnime.css";
 </style>
 

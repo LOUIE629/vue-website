@@ -2,11 +2,37 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 
 const routes = [
-
   {
     path: '/',
-    name: 'Index',
-    component: () => import('../views/index.vue')
+    name: 'Home',
+    component: () => import('../views/Home.vue'),
+    children: [
+      {
+        path: '/piechart',
+        name: 'piechart',
+        component: () => import('../views/showdata/piechart.vue')
+      },
+      {
+        path: '/linechart',
+        name: 'linechart',
+        component: () => import('../views/showdata/linechart.vue')
+      },
+      {
+        path: '/barchart',
+        name: 'barchart',
+        component: () => import('../views/showdata/barchart.vue')
+      },
+      {
+        path: '/userhome',
+        name: 'userhome',
+        component: () => import('../components/Userhome.vue')
+      },
+      {
+        path: '/homepage',
+        name: 'homepage',
+        component: () => import('../components/Homepage.vue')
+      },
+    ]
   },
   {
     path: '/login',
@@ -18,8 +44,8 @@ const routes = [
     path:'/:catchAll(.*)',
     name:'404',
     component: () => import('../views/404.vue')
+  },
 
-  }
 ]
 
 const router = createRouter({

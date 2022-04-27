@@ -1,12 +1,12 @@
 <template>
     <div class="not-found">
-        <img src="../assets/404.jpg" alt="">
+        <img src="../assets/images/404.jpg" alt="">
     </div>
 </template>
 
 <script>
 export default {
-    name: "Index",
+    name: "404",
     components: {},
 };
 </script>
