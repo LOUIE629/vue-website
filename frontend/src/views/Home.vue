@@ -1,13 +1,15 @@
 <template>
 <!-- 使用ui框架中的container组件进行head、aside、main三块式布局 -->
-  <div class="common-layout">
+  <div class="layout-container" style="height: 100%">
     <el-container style="height: 100%">
-      <el-aside width="auto">
-        <Aside></Aside>
+      <el-aside >
+        <Aside />
       </el-aside>
       <el-container>
-        <el-header><Head /></el-header>
-        <el-main>
+        <el-header >
+          <Head />
+        </el-header>
+        <el-main class="main" >
           <!-- 用router-view实现不同vue页面在el-main中显示 -->
           <router-view></router-view>
         </el-main>
@@ -27,11 +29,16 @@ export default {
 };
 </script>
 
-<style lang = "less" scoped>
+<style scoped>
 .el-header {
   background-color: #333;
+  position: relative;
 }
-.el-main {
+.main {
   padding-top: 0;
+}
+.el-aside {
+  height: auto;
+  width: auto;
 }
 </style>

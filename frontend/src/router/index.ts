@@ -3,24 +3,25 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: () => import('../views/Home.vue'),
+    redirect:'/homepage',
     children: [
       {
-        path: '/piechart',
-        name: 'piechart',
-        component: () => import('../views/showdata/piechart.vue')
+        path: '/videodataSum',
+        name: 'videodataSum',
+        component: () => import('../views/showdata/videodataSum.vue')
       },
       {
-        path: '/linechart',
-        name: 'linechart',
-        component: () => import('../views/showdata/linechart.vue')
+        path: '/userdataSum',
+        name: 'userdataSum',
+        component: () => import('../views/showdata/userdataSum.vue')
       },
       {
-        path: '/barchart',
-        name: 'barchart',
-        component: () => import('../views/showdata/barchart.vue')
+        path: '/map',
+        name: 'map',
+        component: () => import('../views/showdata/map.vue')
       },
       {
         path: '/userhome',
@@ -35,7 +36,7 @@ const routes = [
     ]
   },
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: () => import('../views/LoginRegister.vue')
   },
@@ -45,6 +46,7 @@ const routes = [
     name:'404',
     component: () => import('../views/404.vue')
   },
+
 
 ]
 

@@ -12,8 +12,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 routes(app)
 
-
-
 app.listen(3000, () => {
     console.log('server listen at 3000')
 })

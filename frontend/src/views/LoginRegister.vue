@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{ 'sign-up-mode': signUpMode }">
+  <div class="container" id="building" :class="{ 'sign-up-mode': signUpMode }" >
     <div class="forms-container">
       <div class="signin-signup">
         <!--登录-->
@@ -14,22 +14,22 @@
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>欢迎!</h3>
+          <h3 class="register-text">欢迎!</h3>
           <button @click="signUpMode = !signUpMode" class="btn transparent">
             注册
           </button>
         </div>
-        <img src="" class="image" alt="" />
+        <img src="" class="image image1" alt="" />
       </div>
 
       <div class="panel right-panel">
         <div class="content">
-          <h3>欢迎!</h3>
+          <h3 class="login-text">欢迎!</h3>
           <button @click="signUpMode = !signUpMode" class="btn transparent">
             登录
           </button>
         </div>
-        <img src="" class="image" alt="" />
+        <img src="" class="image image2" alt="" />
       </div>
     </div>
     
@@ -56,5 +56,31 @@ export default {
 
 <style scoped>
 @import "../assets/css/LoginRegisterAnime.css";
+.register-text {
+  position: relative;
+  top: -20px;
+}
+.login-text {
+  position: relative;
+  top: -20px;
+}
+#building{
+background:url("../assets/images/background2.png");
+width:100%;			
+height:100%;			
+position:fixed;
+background-size:100% 100%;
+}
+
+/* .image1 {
+  width: 300px;
+  position: relative;
+  top: -20px;
+  left: -200px;
+}
+.image2 {
+  width: 250px;
+
+} */
 </style>
 

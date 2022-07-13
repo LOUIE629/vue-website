@@ -13,8 +13,8 @@
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>退出</el-dropdown-item>
+            <el-dropdown-item @click.native="goUserhome">用户中心</el-dropdown-item>
+            <el-dropdown-item @click.native="logout">返回登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -23,6 +23,7 @@
 </template>
 
 <script  lang="ts">
+import router from "@/router";
 import $store from "../store/index";
 
 export default {
@@ -31,8 +32,9 @@ export default {
     
   // 调用store中mutation中的方法改变iscollapse状态，传入store
     let HandleMenu = () => $store.commit('CollapseMenu');
-
-    return { avatar, HandleMenu };
+    let logout = () => router.push('/');
+    let goUserhome = () => router.push('/userhome');
+    return { avatar, HandleMenu, logout, goUserhome };
   },
 };
 </script>

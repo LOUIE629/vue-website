@@ -40,6 +40,7 @@
 import { getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import { reactive } from "@vue/reactivity";
 
 export default {
   props: {
@@ -56,18 +57,31 @@ export default {
     //@ts-ignore
     const { ctx } = getCurrentInstance();
     const router = useRouter();
+    let location = reactive({
+      province: "",
+      city: "",
+    });
+
+    axios.get("/api").then((response: any) => {
+      location.province = response.data.content.address_detail.province;
+      location.city = response.data.content.address_detail.city;
+    });
+
     //触发登录
     const handleRegister = (formName: string) => {
-
       axios
         .post("http://localhost:3000/user/register", {
           account: ctx.registerUser.account,
           password: ctx.registerUser.password,
+          province: location.province,
+          city: location.city,
         })
         .then((res: any) => {
           //注册成功
           alert("注册成功!");
-          router.push("/login");
+          router.push("/");
+        }).catch(function (error) {
+          alert(error)
         });
     };
 

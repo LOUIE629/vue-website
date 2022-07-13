@@ -12,27 +12,27 @@
         router
     >
     <!-- el-menu中设置router参数，让menu可以直接使用index.ts中的路径路由 -->
-    <h3 class="menu-head">{{isCollapse ? '导航' : '网站数据监测系统'}}</h3>
+    <h3 class="menu-head">{{isCollapse ? '导航' : '网络流量统计分析'}}</h3>
       <el-menu-item index="homepage">
           <el-icon><home-filled /></el-icon>
         <template #title>首页</template>
       </el-menu-item>
       <el-sub-menu index="2">
         <template #title>
-            <el-icon><warning /></el-icon>
-          <span>数据展示</span>
+            <el-icon><Files /></el-icon>
+          <span>数据可视化</span>
         </template>
-        <el-menu-item index="piechart">
+        <el-menu-item index="videodataSum">
             <el-icon><pie-chart /></el-icon>
-            饼状图
+            视频数据统计分析
         </el-menu-item>
-        <el-menu-item index="linechart">
-            <el-icon><trend-charts /></el-icon>
-            折线图
+        <el-menu-item index="userdataSum">
+            <el-icon><Histogram /></el-icon>
+            用户数据统计分析
         </el-menu-item>
-        <el-menu-item index="barchart">
-            <el-icon><compass /></el-icon>
-            柱状图
+        <el-menu-item index="map">
+            <el-icon><MapLocation /></el-icon>
+            用户地图
         </el-menu-item>
       </el-sub-menu>
       <el-menu-item index="userhome">
@@ -45,7 +45,7 @@
 
 <script lang="ts" >
 import { computed } from "vue";
-import { useStore } from 'vuex'
+import { useStore } from 'vuex';
 
 export default {
   setup() {
@@ -62,7 +62,7 @@ export default {
     //调用vuex store中存储的状态 ，该状态在head.vue中传入store
     let isCollapse = computed(()=>{
       return store.state.tab.isCollapse
-    })
+    });
 
     return { isCollapse, handleOpen, handleClose };
   },

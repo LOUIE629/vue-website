@@ -48,7 +48,6 @@ const validatePass2 = (rule:any, value:any, callback:any) => {
     }else if (value !==registerUser.value.password) {
         callback(new Error('两次密码需一致'));
     }
-
 }
 
 //校验规则

@@ -34,6 +34,7 @@
 import { getCurrentInstance } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import $store from "../store/index";
 
 export default {
   props: {
@@ -67,9 +68,13 @@ export default {
         })
         .then((res: any) => {
           //注册成功
-          alert("登录成功!");
-          router.push("/");
+              alert("登录成功!");
+              router.push("/home");
+        }).catch(function (error) {
+          alert(error)
         });
+      $store.commit('getCurrentUser',ctx.loginUser.account) ;
+      //console.log($store.state.CurrentUser.account);
     };
 
     return { handleLogin };
