@@ -2,6 +2,7 @@
 本系统，前端使用Vue3框架，使用element-plus、echarts、vuex、vue-router库；后端使用Express框架，使用MongoDB数据库(Mongoose管理)、nodemon库。使用Axios进行通信，调用了百度地图API以获取用户位置信息。
 
 注意！！！
+
 项目中未删除所需库，会比较大。可自行删除frontend、backend中的node_modules文件夹。
 
 须在本地安装MongoDB数据库
